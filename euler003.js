@@ -16,6 +16,6 @@ function largestPF(num) {
 }
 
 // console.log(largestPF(600851475143));
-console.log(largestPF(13195));
-
+console.log(largestPF(13195)); // 5 7 13 29 
+//
 //377*35
