@@ -1,13 +1,13 @@
 function sumStrings(a,b) {
-	if (a.length > 20 || b.length > 20) {
+	if (a.length > 15 || b.length > 15) {
 		var out = '';
-		var aRight = a.slice(-20);
-		var aLeft = a.slice(0,-20) === '' ? '0' : b.slice(0,-20);
-		var bRight = b.slice(-20);
-		var bLeft = b.slice(0,-20) === '' ? '0' : b.slice(0,-20);
+		var aRight = a.slice(-15);
+		var aLeft = a.slice(0,-15) === '' ? '0' : a.slice(0,-15);
+		var bRight = b.slice(-15);
+		var bLeft = b.slice(0,-15) === '' ? '0' : b.slice(0,-15);
 		var outRight = Number(aRight) + Number(bRight);
 		var carry = 0;
-		if (outRight.length > 20) {
+		if (outRight.length > 15) {
 			carry++;
 			outRight = outRight.slice(1);
 		}
