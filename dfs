@@ -1,0 +1,41 @@
+iterative DFS(Vertex v)
+    mark v visited
+    make an empty Stack S
+    push all vertices adjacent to v onto S
+    while S is not empty do
+        Vertex w is pop off S
+        for all Vertex u adjacent to w do
+            if u is not visited then 
+                mark u visited
+                push u onto S
+
+
+
+Algorithm DFS(graph G, Vertex v) 
+	for all edges e in G.incidentEdges(v) do
+		if edge e is unexplored then
+			w = G.opposite(v, e) 
+			if vertex w is unexplored then 
+			    label e as discovery edge 
+			    recursively call DFS(G, w) 
+			else 
+			    label e a a back edge
+
+
+
+
+
+Depth-First-Search-Kickoff( Maze m )
+    Depth-First-Search( m.StartCell )
+End procedure
+
+Depth-First-Search( MazeCell c )
+    If c is the goal
+        Exit
+    Else
+        Mark c "Visit In Progress"
+        Foreach neighbor n of c
+            If n "Unvisited"
+                Depth-First-Search( n )
+        Mark c "Visited"
+End procedure
