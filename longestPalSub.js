@@ -18,3 +18,12 @@ function longPal(s) {
 	}
 	return long.length;
 }
+
+
+/*
+http://articles.leetcode.com/longest-palindromic-substring-part-ii
+http://www.programcreek.com/2013/12/leetcode-solution-of-longest-palindromic-substring-java/
+https://en.wikipedia.org/wiki/Longest_palindromic_substring
+http://articles.leetcode.com/longest-palindromic-substring-part-ii
+
+*/
