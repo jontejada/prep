@@ -1,0 +1,26 @@
+ 1     ListNode *detectCycle(ListNode *head) {
+ 2         ListNode * first = head;
+ 3         ListNode * second = head;
+ 4         
+ 5         while(first != NULL && second != NULL)
+ 6         {
+ 7             first = first->next;
+ 8             second = second->next;
+ 9             if(second != NULL)
+10                 second = second->next;
+11             if(first == second)
+12                 break;
+13         }
+14        
+15         if(second == NULL) return NULL;
+16         
+17         // 一起往下走X步，就找到节点了。
+18         first = head;
+19         while(first!=second)
+20         {
+21             first = first->next;
+22             second = second->next;
+23         }
+24         
+25         return second;
+26     }
