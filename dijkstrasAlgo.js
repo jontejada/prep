@@ -1,4 +1,5 @@
 /**
+https://github.com/mburst/dijkstras-algorithm/blob/master/dijkstras.js
  * Basic priority queue implementation. If a better priority queue is wanted/needed,
  * this code works with the implementation in google's closure library (https://code.google.com/p/closure-library/).
  * Use goog.require('goog.structs.PriorityQueue'); and new goog.structs.PriorityQueue()
@@ -41,6 +42,7 @@ function Graph(){
         path = [],
         smallest, vertex, neighbor, alt;
 
+        //add all verticies to the node priority queue. the start will have a priorty/distance of 0, all others start at infinity
     for(vertex in this.vertices) {
       if(vertex === start) {
         distances[vertex] = 0;
@@ -50,16 +52,19 @@ function Graph(){
         distances[vertex] = INFINITY;
         nodes.enqueue(INFINITY, vertex);
       }
-
+      //building up previous obj with nulls for all verticies
       previous[vertex] = null;
     }
 
     while(!nodes.isEmpty()) {
+      //get / take off the lowest distance (starts with start)
       smallest = nodes.dequeue();
 
+      //if/when you reach the finish, build up path and end the while loop
       if(smallest === finish) {
-        path;
+        path; //this does nothing
 
+        //build up path by traversing the path with the previous obj
         while(previous[smallest]) {
           path.push(smallest);
           smallest = previous[smallest];
@@ -68,6 +73,8 @@ function Graph(){
         break;
       }
 
+
+      //next iteration if dequeueing returned something falsy? OR distance is infinity
       if(!smallest || distances[smallest] === INFINITY){
         continue;
       }
@@ -75,6 +82,8 @@ function Graph(){
       for(neighbor in this.vertices[smallest]) {
         alt = distances[smallest] + this.vertices[smallest][neighbor];
 
+
+        //if a shorter path is found
         if(alt < distances[neighbor]) {
           distances[neighbor] = alt;
           previous[neighbor] = smallest;

@@ -26,24 +26,47 @@
 
 
 
+// var fibonacci = (function(){
+// 	var memo = {};
+// 	function f(n){
+// 		var value;
+// 		if (n in memo) {
+// 			value = memo[n];
+// 		} else if (n < 2) {
+// 			value = n;
+// 		} else {
+// 			value = f(n - 2) + f(n - 1);
+// 			memo[n] = value;
+// 		}
+// 		return value;
+// 	}
+// 	return f;
+// })();
+
 var fibonacci = (function(){
 	var memo = {};
-	function f(n){
+	function f(n) {
 		var value;
-		if (n in memo) {
+		if (memo[n]) {
 			value = memo[n];
-		} else if (n < 2) {
-			value = n;
 		} else {
-			value = f(n - 2) + f(n - 1);
-			memo[n] = value;
+			if (n < 2) value = n;
+			else {
+				value = f(n - 2) + f(n - 1);
+				memo[n] = value;
+			}
 		}
 		return value;
 	}
 	return f;
 })();
 
-console.log(fibonacci(4));
+
+
+console.log(fibonacci(12));
+console.log(fibonacci(15));
+
+
 
 
 

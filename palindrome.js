@@ -6,3 +6,11 @@ function isPal(str) {
 console.log(isPal('a'));
 console.log(isPal('ab'));
 console.log(isPal('aba'));
+
+
+
+
+function isPal2(str) {
+	str = str.replace(/\W/g,'').toLowerCase(); // made tester whitespace and case insensitive
+	return str === str.split('').reverse().join('');
+}
