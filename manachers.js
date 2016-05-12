@@ -9,8 +9,8 @@ function longestPalSubstr(str) {
 	var r = 0;
 	for (var i = 1; i < padded.length - 1; i++) {
 		p[i] = 0;
-		var mir = 2 * c - 1;
-		if (i < R) {
+		var mir = 2 * c - 1; //?
+		if (i < r) {
 			p[i] = Math.min(r - i, p[mir]);
 		}
 		while (padded[i + (1 + p[i])] === padded[i - (1 + p[i])]) {
@@ -25,5 +25,5 @@ function longestPalSubstr(str) {
 	// 	return b - a; //descending
 	// })[0];
 	// return 
-	
+
 }
