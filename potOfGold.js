@@ -10,5 +10,5 @@ function playPot(arr, start, end) {
 	return Math.max(left,right);
 }
 
-console.log(playPot([2,5,7,9,3,10,1,9,8,1]));
-// console.log(playPot([2,5,7,9,3,10,9,8,1]));
+// console.log(playPot([2,5,7,9,3,10,1,9,8,1]));
+console.log(playPot([2,5,7,9,3,10,9,8,1]));
